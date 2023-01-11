@@ -1,4 +1,4 @@
-from test import matrix
+from helper import matrix
 
 def backward(A, B, Pi, O, Q) :
     """
@@ -20,12 +20,11 @@ def backward(A, B, Pi, O, Q) :
     for s in Q:
         Backward[s][T-1] = 1
 
-    for t in range(T-2, 0):
+    for t in range(T-2, -1, -1):
         print('Pour t = {}'.format(t))
         for s in Q:
             for e in Q:
                 Backward[s][t] += (Backward[e][t+1] * A[e][s]) * B[s][t+1]
-                print('Bacward')
 
     for s in Q:
         print('Val :'.format(Backward[s][0]))

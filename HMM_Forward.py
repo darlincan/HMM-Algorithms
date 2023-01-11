@@ -1,4 +1,4 @@
-from test import matrix
+from helper import matrix
 
 def forward(A, B, Pi, O, Q) :
     """
