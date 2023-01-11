@@ -8,6 +8,30 @@ def matrix(row, col, Q) :
         M[Q[i]] = temp
     return M
 
+def matrixVariable(row, Q, tp) :
+    N = {}
+    for i in range(row):
+        print('i = {}'.format(i))
+        T = {}
+        for t in range(tp):
+            print('t = {}'.format(t))
+            temp = {}
+            for s in Q:
+                temp[s] = 0
+            print('temp = {}'.format(temp))
+            T[t] = temp
+            print('T = {}'.format(T))
+        N[Q[i]] = T
+        print('N = {}'.format(N))
+    return N
+
+
+
+
+
+
+
+
 def varaiblesXi(t, i, j, alpha, beta, A, B, Q) :
     """
     la variable Xi rattachée aux index i et j à l'instant t est la probabilité d'avoir emprunté un chemin
@@ -43,12 +67,13 @@ def gamma(t, i, alpha, beta, A, B, Q):
 
 
 
+matrixVariable(2, ['h','c'], 3)
 
 
 M = matrix(2, 3, ['h','c'])
 dico = {'h': [5, 0, 0], 'c': [0, 0, 0]}
 
-for i in range(1, -1, -1):
-    print(i)
+#for i in range(1, -1, -1):
+#   print(i)
 
 #print(dico['h'][0])
