@@ -11,24 +11,14 @@ def matrix(row, col, Q) :
 def matrixVariable(row, Q, tp) :
     N = {}
     for i in range(row):
-        print('i = {}'.format(i))
         T = {}
         for t in range(tp):
-            print('t = {}'.format(t))
             temp = {}
             for s in Q:
                 temp[s] = 0
-            print('temp = {}'.format(temp))
             T[t] = temp
-            print('T = {}'.format(T))
         N[Q[i]] = T
-        print('N = {}'.format(N))
     return N
-
-
-
-
-
 
 
 
@@ -65,9 +55,10 @@ def gamma(t, i, alpha, beta, A, B, Q):
     return Gamma
 
 
+N = matrixVariable(2, ['h','c'], 3)
 
-
-matrixVariable(2, ['h','c'], 3)
+print(N)
+#N['h'][0]['h']
 
 
 M = matrix(2, 3, ['h','c'])
